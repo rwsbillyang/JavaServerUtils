@@ -27,7 +27,7 @@ or build.gradle:
 format Timestamp, Date, DateTime,  parse String using org.apache.commons.lang3.time.FastDateFormat
 
 ### IPUtil
-query address by http://ip.taobao.com/service/getIpInfo.php , and mutual convert between ip address and long
+get address(province, city etc.) by querying `http://ip.taobao.com/service/getIpInfo.php` , and mutual convert between ip address and long number.
 
 ### JsonUtil
 json util class using jackson
