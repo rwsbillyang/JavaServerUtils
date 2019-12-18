@@ -22,14 +22,25 @@ import com.github.rwsbillyang.clearUtils.BrowserCheckUtil;
 
 public class RequestUtil {
 	public static boolean isMicroMessenger(HttpServletRequest request) {
-		return BrowserCheckUtil.isMicroMessenger(request.getHeader("User-Agent").toLowerCase());
+		String ua = request.getHeader("User-Agent");
+		if(ua == null) return false;
+		return BrowserCheckUtil.isMicroMessenger(ua.toLowerCase());
 	}
 	public static boolean isMobile(HttpServletRequest request) {
-		return BrowserCheckUtil.isMobile(request.getHeader("User-Agent").toLowerCase());
+		String ua = request.getHeader("User-Agent");
+		if(ua == null) return false;
+		return BrowserCheckUtil.isMobile(ua.toLowerCase());
 	}
-	
+	/**
+     * 0: PC browser
+     * 1: mobile
+     * 2: weixin
+     * -1: null user-agent
+     * */
 	public static int getBrowserType(HttpServletRequest request) {
-		return BrowserCheckUtil.getBrowserType(request.getHeader("User-Agent").toLowerCase());
+		String ua = request.getHeader("User-Agent");
+		if(ua == null) return -1;
+		return BrowserCheckUtil.getBrowserType(ua.toLowerCase());
 	}
 	
 	/**
