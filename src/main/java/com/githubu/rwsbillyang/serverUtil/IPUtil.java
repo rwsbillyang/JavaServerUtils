@@ -99,6 +99,7 @@ public class IPUtil {
 
 	// 将127.0.0.1形式的IP地址转换成十进制整数，这里没有进行任何错误处理
 	public static Long ipToLong(String strIp) {
+		if(strIp == null) return null;
 		long[] ip = new long[4];
 		// 先找到IP地址字符串中.的位置
 		int position1 = strIp.indexOf(".");
