@@ -375,9 +375,9 @@ public class FastDateUtil {
 	 * 计算当前时间的前days天的毫秒起始值. [start,end)
 	 * based on java8 time package
 	 * */
-	public static long getStartMilliSeconds(int days)
+	public static long getStartMilliSeconds(int month, int days)
 	{
-		return LocalDate.now().minusDays(days).atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
+		return LocalDate.now().minusMonths(month).minusDays(days).atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
 	}
 	/**
 	 * 计算当前日期的起始毫秒数。不要包括当前秒:[start,end)
