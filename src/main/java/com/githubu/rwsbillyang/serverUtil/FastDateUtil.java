@@ -149,6 +149,17 @@ public class FastDateUtil {
 		}
 		return null;
 	}
+	public static Long parseDatetimeToLong(String datetime)  {
+		if(StringUtils.isBlank(datetime))
+			return null;
+		try {
+			return datetimeFormat.parse(datetime).toInstant().toEpochMilli();
+		}catch(ParseException e) {
+			System.err.println("ParseException:date="+datetime);
+		}
+		return null;
+	}
+	
 	public static java.sql.Date parseSqlDate(String datetime)  {
 		if(StringUtils.isBlank(datetime))
 			return null;
