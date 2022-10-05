@@ -12,7 +12,7 @@ are involved and are depended.
 
 	<properties>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
-		<jackson-version>2.10.1</jackson-version>
+		<jackson-version>2.12.6.1</jackson-version>
 		<project.build.sourceEncoding> UTF-8  </project.build.sourceEncoding>
 	</properties>
 	
